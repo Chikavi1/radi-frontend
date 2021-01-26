@@ -13,7 +13,7 @@
 
       <div class="col-span-1">
         <!-- <form action="" @submit.prevent="addPet"> -->
-        <form action="" @submit.prevent="">
+        <form data-aos="fade-down-right" action="" @submit.prevent="addPet">
           
           <div>
               <div class="sm:grid-cols-2 grid gap-3">
@@ -76,8 +76,7 @@
       </div>
 
       <div class="col-span-1">
-
-          <div class="mb-10 m-auto  sm:max-w-xs sm:w-full  mt-6 sm:flex-shrink-0 sm:px-2">
+          <div data-aos="fade-down-left" class="mb-10 m-auto  sm:max-w-xs sm:w-full  mt-6 sm:flex-shrink-0 sm:px-2">
                 <div class="relative pb-5/6">
                         <img class="w-full object-cover rounded-lg shadow-md h-64" :src="images.length === 0?'https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60':images" alt="">
                 </div>
@@ -109,7 +108,6 @@
                     </div>
                     </div>
           </div> 
-
       </div>
     </div>
     
@@ -120,6 +118,14 @@
 <script>
 import Autocomplete from '../components/Autocomplete';
 import axios from "axios";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init()
+
+import ciudades from "./../assets/json/ciudades.json";
+import raza_perros from "./../assets/json/raza_perros.json";
+import raza_gatos from "./../assets/json/raza_gatos.json";
+
 
 
 class Pets{
@@ -140,16 +146,15 @@ class Pets{
   }
 }
 
-  import ciudades from "./../assets/json/ciudades.json";
-  import raza_perros from "./../assets/json/raza_perros.json";
-  import raza_gatos from "./../assets/json/raza_gatos.json";
+  
 
 export default {
 
 
 name: 'CreatePets',
-  components: {    Autocomplete
-},
+  components: {    
+    Autocomplete
+  },
 
     data(){
         return{
@@ -175,7 +180,7 @@ name: 'CreatePets',
         },
        addPet(){
          console.log(this.pets);
-            fetch('http://localhost:3000/mascotas',{
+            fetch('http://localhost:3000/pets/create',{
                 method: 'POST',
                 body: JSON.stringify(this.pets),
                 headers: {

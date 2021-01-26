@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div >
-        <header class="header my-8">
+    <div class="" >
+        <header class="header my-8 ">
             <!-- container -->
-            <div class="container px-4 sm:px-8 lg:px-16 xl:px-20 mx-auto">
+            <div class="container  px-2 sm:px-8 lg:px-12 xl:px-12 mx-auto">
                 <!-- header wrapper -->
                     <div class="header-wrapper flex items-center justify-between">
 
@@ -30,7 +30,8 @@
                         <!-- Navbar -->
                         <navbar class="navbar hidden md:block">
                             <ul class="flex space-x-8 text-sm font-semibold">
-                                <router-link to="/about">Acerca de</router-link> 
+                                <li><router-link to="/donaciones">Donaciones</router-link></li>
+                                <li><router-link to="/about">Acerca de</router-link></li>
                                 <li> <router-link to="/Patrocinadores">Patrocinadores</router-link> </li>
                                 <li><router-link class="cta bg-purple-500 hover:bg-purple-600 px-5 py-3 rounded text-white font-normal" to="/mascotas">Adopta</router-link></li>
                             </ul>
@@ -45,25 +46,3 @@
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>

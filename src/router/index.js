@@ -6,6 +6,7 @@ import CreatePets from '../views/CreatePets.vue';
 import Patrocinadores from '../views/Patrocinadores.vue';
 import Signin from '../views/Signin.vue';
 import Login from '../views/Login.vue';
+import Donations from '../views/Donations';
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/patrocinadores',
     name: 'Patrocinadores',
     component: Patrocinadores
+  },
+  {
+    path: '/donaciones',
+    name: 'Donaticiones',
+    component: Donations
   },
   {
     path: '/mascotas',
